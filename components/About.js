@@ -7,6 +7,7 @@ import {
     StyleSheet
 } from 'react-native'
 import style from '../styles/Styles'
+import about from '../styles/About'
 
 export default class About extends React.Component {
     static navigationOptions = {
@@ -21,17 +22,10 @@ export default class About extends React.Component {
 
     render() {
         return(
-            <View>
-                <Text style={styles.title}>A propos de l'application</Text>
+            <View style={style.container}>
+                <Text style={about.title}>A propos de l'application</Text>
                 <Button color={style.color} onPress={() => this.search()} title='Rechercher une ville' />
             </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    title: {
-        fontSize: 20,
-        marginBottom: 10
-    }
-});

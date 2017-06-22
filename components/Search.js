@@ -5,11 +5,14 @@ import {
     Button,
     TextInput
 } from 'react-native'
-
+import { StackNavigator } from 'react-navigation'
 import style from '../styles/Styles'
+import search from '../styles/Search'
+import List from './List'
 
-export default class Search extends React.Component {
+class Search extends React.Component {
     static navigationOptions = {
+        title: 'Weathr',
         tabBarIcon: () => {
             return <Image source={require('./icons/home.png')} style={{width: 20, height: 20}} />
         }
@@ -28,11 +31,15 @@ export default class Search extends React.Component {
         })
     }
 
+    submit() {
+        this.props.navigation.navigate('Result', {city: this.state.city})
+    }
+
     render () {
         return(
-            <View>
+            <View style={style.container}>
                 <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    style={style.input}
                     underlineColorAndroid='transparent'
                     value={this.state.city}
                     onChangeText={(text) => this.setCity(text)} />
@@ -42,3 +49,10 @@ export default class Search extends React.Component {
         );
     }
 }
+
+
+
+export default StackNavigator ({
+    Search: {screen: Search},
+    Result: {screen: List}
+})
