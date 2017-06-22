@@ -11,13 +11,25 @@ import {
 const Tabs = TabNavigator ({
     Search: {screen: Search},
     About: {screen: About}
+}, {
+    tabBarPosition: 'bottom',
+    tabBarOptions: {
+        showIcon: true,
+        showLabel: false,
+        indicatorStyle: {
+            backgroundColor: '#ecf0f1'
+        },
+        style: {
+            backgroundColor: '#3498db'
+        }
+    }
 });
 
 export default class App extends React.Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <StatusBar backgroundColor={"#ffffff"} />
+                <StatusBar hidden={true} />
                 <Tabs style={styles.bar} />
             </View>
         );
@@ -25,7 +37,7 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    bagitr: {
+    bar: {
         marginTop: 20
     }
 });
