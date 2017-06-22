@@ -52,7 +52,12 @@ class Search extends React.Component {
 
 
 
+const navigationOptions = {
+    headerStyle: style.header,
+    headerTitleStyle: style.headerTitle
+}
+
 export default StackNavigator ({
-    Search: {screen: Search},
-    Result: {screen: List}
+    Result: {screen: List, navigationOptions},
+    Search: {screen: Search, navigationOptions}
 })

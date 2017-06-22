@@ -1,5 +1,7 @@
+const blue = '#3498db';
+
 export default ({
-    color: '#3498db',
+    color: blue,
     container: {
         margin: 20
     },
@@ -9,5 +11,11 @@ export default ({
         borderWidth: 1,
         paddingHorizontal: 10,
         marginBottom: 20
+    },
+    header: {
+        backgroundColor: blue
+    },
+    headerTitle: {
+        color: '#ecf0f1'
     }
 })
