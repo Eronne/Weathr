@@ -6,6 +6,7 @@ import {
     ListView
 } from 'react-native'
 import axios from 'axios'
+import WeatherRow from './weather/Row'
 import style from '../styles/Styles'
 import list from '../styles/List'
 
@@ -42,7 +43,7 @@ export default class List extends React.Component {
             return (
                 <ListView
                     dataSource={ds.cloneWithRows(this.state.datas.list)}
-                    renderRow={(rowData) => <Text>{rowData.temp.day}</Text>}
+                    renderRow={(rowData, key2, key3) => <WeatherRow day={rowData} index={parseInt(key3, 10)} />}
                 />
             )
         }
