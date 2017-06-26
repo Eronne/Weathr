@@ -1,7 +1,8 @@
-const blue = '#3498db';
+const principal = '#7566A9';
+const secondary = '#927FBF';
 
 export default ({
-    color: blue,
+    color: principal,
     container: {
         margin: 20
     },
@@ -13,7 +14,7 @@ export default ({
         marginBottom: 20
     },
     header: {
-        backgroundColor: blue
+        backgroundColor: principal
     },
     headerTitle: {
         color: '#ecf0f1'

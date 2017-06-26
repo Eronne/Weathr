@@ -7,6 +7,7 @@ import {
     StatusBar,
     StyleSheet
 } from "react-native";
+import style from './styles/Styles'
 
 const Tabs = TabNavigator ({
     Search: {screen: Search},
@@ -20,7 +21,7 @@ const Tabs = TabNavigator ({
             backgroundColor: '#ecf0f1'
         },
         style: {
-            backgroundColor: '#3498db'
+            backgroundColor: '#7566A9'
         }
     }
 });
