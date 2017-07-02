@@ -33,7 +33,7 @@ export default class List extends React.Component {
     }
 
     fetchWeather() {
-        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Paris&mode=json&units=metric&APPID=5d792d578f6c08360be6fa5c2feba065')
+        axios.get("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + this.props.navigation.state.params.city + "Paris&mode=json&units=metric&APPID=5d792d578f6c08360be6fa5c2feba065")
             .then((response) => {
                 this.setState({datas: response.data})
             })

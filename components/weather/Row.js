@@ -7,6 +7,7 @@ import {
 import style from '../../styles/Styles'
 import row from '../../styles/Row'
 import moment from 'moment'
+import FadeInView from '../animation/fadeInView'
 import 'moment/locale/fr'
 moment.locale('fr');
 
@@ -76,25 +77,29 @@ export default class Row extends React.Component {
     render() {
         if (this.props.index === 0) {
             return (
-                <View style={[row.flex, row.view, row.firstView]}>
-                    <View>
-                        <Text style={{marginBottom: 6}}>{this.day()} {this.date()}</Text>
-                        {this.setIcon(64)}
-                    </View>
+                <FadeInView delay={this.props.index * 50}>
+                    <View style={[row.flex, row.view, row.firstView]}>
+                        <View>
+                            <Text style={{marginBottom: 6}}>{this.day()} {this.date()}</Text>
+                            {this.setIcon(64)}
+                        </View>
 
-                    <Text style={[row.white, row.bold, row.temp, {fontSize: 35}]}>{Math.round(this.props.day.temp.day)}°C</Text>
-                </View>
+                        <Text style={[row.white, row.bold, row.temp, {fontSize: 35}]}>{Math.round(this.props.day.temp.day)}°C</Text>
+                    </View>
+                </FadeInView>
             )
         } else {
             return (
-                <View style={[row.flex, row.view]}>
-                    <View style={row.flex}>
-                        {this.setIcon()}
-                        <Text style={{marginLeft: 18}}>{this.day()} {this.date()}</Text>
-                    </View>
+                <FadeInView delay={this.props.index * 50}>
+                    <View style={[row.flex, row.view]}>
+                        <View style={row.flex}>
+                            {this.setIcon()}
+                            <Text style={{marginLeft: 18}}>{this.day()} {this.date()}</Text>
+                        </View>
 
-                    <Text style={[row.purple, row.bold, row.temp]}>{Math.round(this.props.day.temp.day)}°C</Text>
-                </View>
+                        <Text style={[row.purple, row.bold, row.temp]}>{Math.round(this.props.day.temp.day)}°C</Text>
+                    </View>
+                </FadeInView>
             )
         }
     }
